@@ -1,0 +1,49 @@
+$dark: #D35400;
+$primary: #F4B350;
+$darkest: #96281B;
+$light: #DADFE1;
+$lightest: #ECF0F1;
+$lightest2: white;
+$bg: image_url("bg_texture.gif");
+
+body{
+  background: $bg;
+
+  //side bar
+  .side-bar{
+    width: 20%;
+    min-height: 400px;
+    float:left;
+    background: $dark;
+    border-radius: .4em;
+  }
+  .content-wrapper{
+    float:left;
+    width: 79%;
+    margin-left: 1%;
+
+    .post-item{
+      width: 25%;
+      margin-top: 0px;
+      padding: 0px 10px 10px 0px;
+
+      .post-item-wrapper{
+        width: 100%;
+        min-height: 300px;
+        border: 1px solid #BBBBBB;
+        background: $lightest2;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  //side bar
+  .side-bar{
+    min-height: 400px;
+    background: $dark;
+    border-radius: .4em;
+  }
+
+}

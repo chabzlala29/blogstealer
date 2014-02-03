@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Blogstealer
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %main
+      .side-bar
+      .content-wrapper
+        - 15.times do
+          .post-item
+            .post-item-wrapper
+              %img{src: "http://placehold.it/350x#{rand(200..500)}px"}
