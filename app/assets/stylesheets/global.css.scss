@@ -1,37 +1,191 @@
-$dark: #D35400;
-$primary: #F4B350;
-$darkest: #96281B;
-$light: #DADFE1;
-$lightest: #ECF0F1;
+$dark: #BF5730;
+$primary: #FF4501;
+$darkest: #A62D00;
+$darkest2: #414141;
+$light: #FF7440;
+$lightest: #FF9973;
 $lightest2: white;
 $bg: image_url("bg_texture.gif");
+$light-font: #A8FF6E;
+$break-medium: 1200px;
 
 body{
   background: $bg;
 
   //side bar
+  .side-bar-hidden{
+    margin-top: none;
+    width: 2%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    background: $darkest2;
+    top: 0;
+    display:none;
+
+    @media screen and (max-width: $break-medium){
+      width: 30px;
+    }
+    .hide-toggle2{
+      position:absolute;
+      cursor: pointer;
+      color: $light-font;
+      font-size: 30px;
+      top: 45%;
+      right: 2px;
+    }
+  }
   .side-bar{
     width: 20%;
-    min-height: 400px;
+    height: 100%;
     float:left;
-    background: $dark;
-    border-radius: .4em;
+    position:fixed;
+    top: 0;
+
+    .side-bar-wrapper{
+      background:$darkest2;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+
+      .hide-toggle{
+        position:absolute;
+        cursor: pointer;
+        z-index: 2;
+        color: $light-font;
+        font-size: 30px;
+        top: 45%;
+        right: 0px;
+        display: none;
+      }
+
+      .search-box{
+        position:relative;
+        margin-top:25px;
+
+        input{
+          width: 78%;
+          margin: 0 auto;
+          font-size: 12px;
+          margin:0px 4% 10px;
+          border: none;
+          background-color: $dark;
+          padding: 10px;
+          color: $light-font;
+          font-weight: bold;
+
+          &:focus{
+            outline: 0;
+          }
+          &::-webkit-input-placeholder { /* WebKit browsers */
+            color: $light-font;
+          }
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: $light-font;
+          }
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: $light-font;
+          }
+          &:-ms-input-placeholder { /* Internet Explorer 10+ */
+            color: $light-font;
+          }
+        }
+
+        button{
+          position: absolute;
+          width: 37px;
+          height: 37px;
+          background: #A62D00;
+          border: none;
+          right: 15px;
+
+          span{
+            font-size: 20px;
+            color: #A8FF6E;
+          }
+        }
+
+      }
+
+      h3{
+        margin-left: 10px;
+        padding: 10px 0px 10px 0px;
+        color: white;
+      }
+
+      ul{
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        position: relative;
+        z-index: 1;
+
+        li{
+          font-size: 12px;
+          padding: 10px;
+          background: $dark;
+          font-weight: bold;
+          color: #A8FF6E;
+          cursor: pointer;
+          position: relative;
+
+          .active-wrapper{
+            .checkbox{
+              float: right;
+              font-size: 17px;
+              position: absolute;
+              right: 30px;
+            }
+          }
+
+          &.active{
+            
+          }
+          &:hover{
+            background: $light;
+          }
+
+          &:nth-child(odd){
+            background: $darkest;
+
+            &:hover{
+              background: $light;
+            }
+          }
+          &.main{
+            font-size:17px;
+          }
+        }
+
+      } 
+    }
+    .side-bar-footer{
+      margin-top: 5px;
+      text-align: center;
+      color: $lightest;
+      font-size: 11px;
+      position: relative;
+    }
+
+    h3{
+      margin:0;
+      padding:0;
+    }
   }
-  .content-wrapper{
+  .featured-wrapper{
     float:left;
     width: 79%;
-    margin-left: 1%;
+    margin-left: 21%;
+    margin-bottom:5px;
 
-    .post-item{
-      width: 25%;
-      margin-top: 0px;
+    .featured-post{
       padding: 0px 10px 10px 0px;
 
-      .post-item-wrapper{
-        width: 100%;
-        min-height: 300px;
+      .content{
         border: 1px solid #BBBBBB;
-        background: $lightest2;
+        height: 300px;
+        overflow: hidden;
 
         img{
           width: 100%;
@@ -39,11 +193,73 @@ body{
       }
     }
   }
-  //side bar
-  .side-bar{
-    min-height: 400px;
-    background: $dark;
-    border-radius: .4em;
+  .content-wrapper{
+    float:left;
+    width: 79%;
+    margin-left: 21%;
+
+    .post-item{
+      margin-top: 0px;
+      padding: 0px 10px 10px 0px;
+
+      .post-item-wrapper{
+        width: 100%;
+        border: 1px solid #BBBBBB;
+        background: $lightest2;
+
+        img{
+          width: 100%;
+        }
+        .actions{
+          background: $darkest2;
+          height: 40px;
+          color: $light-font;
+          padding: 5px;
+
+          div{
+            float:right;
+            margin-left: 12px;
+          }
+          .glyphicon{
+            font-size: 20px;
+            position: relative;
+            top: 5px;
+          }
+        }
+
+        .post-item-content{
+          padding: 10px;
+          background: $primary;
+          font-size: 11px;
+
+          button{
+            margin-top: 5px;
+            position: relative;
+            border-radius: 0em;
+            background: $darkest;
+            border: 1px solid #273038;
+          }
+
+          .header{
+            .title{
+              font-weight: bolder;
+              color: #A8FF6E;
+            }
+            .author{
+              color: #FDEFB7;
+            }
+            .date-posted{
+              color: #FFB2B2;
+            }
+          }
+
+          .content{
+            margin-top: 10px;
+            color: white;
+          }
+        }
+      }
+    }
   }
 
 }

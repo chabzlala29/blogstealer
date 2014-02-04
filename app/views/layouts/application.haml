@@ -6,10 +6,19 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    = render "shared/side_bar"
     %main
-      .side-bar
+      .featured-wrapper
+        .col-lg-6.col-md-12.featured-post
+          .content
+            %img{src: "http://placehold.it/500x304px"}
+            .text-content
+              %p 
+        .col-lg-6.col-md-12.featured-post
+          .content
+            %img{src: "http://placehold.it/500x304px"}
+            .text-content
+              %p 
       .content-wrapper
-        - 15.times do
-          .post-item
-            .post-item-wrapper
-              %img{src: "http://placehold.it/350x#{rand(200..500)}px"}
+        - 30.times do
+          =render "posts/post"
