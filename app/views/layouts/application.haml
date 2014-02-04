@@ -8,17 +8,17 @@
   %body
     = render "shared/side_bar"
     %main
-      .featured-wrapper
-        .col-lg-6.col-md-12.featured-post
-          .content
-            %img{src: "http://placehold.it/500x304px"}
-            .text-content
-              %p 
-        .col-lg-6.col-md-12.featured-post
-          .content
-            %img{src: "http://placehold.it/500x304px"}
-            .text-content
-              %p 
+      -#.featured-wrapper
+        -#.col-lg-6.col-md-12.featured-post
+          -#.content
+            -#%img{src: "http://placehold.it/500x304px"}
+            -#.text-content
+              -#%p 
+        -#.col-lg-6.col-md-12.featured-post
+          -#.content
+            -#%img{src: "http://placehold.it/500x304px"}
+            -#.text-content
+              -#%p 
       .content-wrapper
         - 30.times do
           =render "posts/post"
