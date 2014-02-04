@@ -1,0 +1,7 @@
+$break-medium: 1200px;
+
+.side-bar-hidden{
+  @media screen and (max-width: $break-medium){
+    width: 30px;
+  }
+}

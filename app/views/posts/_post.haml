@@ -1,0 +1,23 @@
+.post-item.col-md-6.col-lg-3.col-sm-6.col-xs.12
+  .post-item-wrapper
+    %img{src: "http://placehold.it/350x#{rand(200..500)}px"}
+    .post-item-content
+      .header
+        %span.title Hello
+        %span.author by chabzlala29
+        .date-posted a month ago
+      .content
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut tincidunt metus, ut venenatis eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque augue dui, molestie sit amet commodo eget, aliquam et tellus.
+      %button.btn.btn-xs.btn-primary.read-more
+        Read More
+    .actions
+      .share
+        =rand(20..1000)
+        %span.glyphicon.glyphicon-share
+      .like
+        = rand(20..1000)
+        %span.glyphicon.glyphicon-heart
+      .comment
+        = rand(20..1000)
+        %span.glyphicon.glyphicon-comment
+
